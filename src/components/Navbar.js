@@ -60,6 +60,7 @@ const Navbar = () => {
           <div className="lower">
               <button name="(G)I-DLE" onClick={showGroup}>(G)I-DLE</button>
               <button name="Dreamcatcher" onClick={showGroup}>Dreamcatcher</button>
+              <button name="ENHYPEN" onClick={showGroup}>ENHYPEN</button>
               <button name="LE SSERAFIM" onClick={showGroup}>LE SSERAFIM</button>
               <button name="Weeekly" onClick={showGroup}>Weeekly</button>
           </div>
