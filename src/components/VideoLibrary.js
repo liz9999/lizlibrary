@@ -1,5 +1,4 @@
 import React from "react";
-// import { VideoList } from "../helpers/VideoList";
 import VideoItem from "../components/VideoItem"
 
 const VideoLibrary = ({ListOfVideos}) => {
