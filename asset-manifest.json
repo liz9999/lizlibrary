@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/lizlibrary/static/css/main.3bafc8ac.css",
-    "main.js": "/lizlibrary/static/js/main.2652e9c3.js",
+    "main.js": "/lizlibrary/static/js/main.02bbb3fa.js",
     "static/js/787.9dde68c7.chunk.js": "/lizlibrary/static/js/787.9dde68c7.chunk.js",
     "index.html": "/lizlibrary/index.html",
     "main.3bafc8ac.css.map": "/lizlibrary/static/css/main.3bafc8ac.css.map",
-    "main.2652e9c3.js.map": "/lizlibrary/static/js/main.2652e9c3.js.map",
+    "main.02bbb3fa.js.map": "/lizlibrary/static/js/main.02bbb3fa.js.map",
     "787.9dde68c7.chunk.js.map": "/lizlibrary/static/js/787.9dde68c7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3bafc8ac.css",
-    "static/js/main.2652e9c3.js"
+    "static/js/main.02bbb3fa.js"
   ]
 }
