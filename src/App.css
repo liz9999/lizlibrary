@@ -70,9 +70,8 @@
 .navbar .upper .right img {
   height: 3.5vh;
   width: 3.5vh;
-  padding-right: 1.5vw;
-  padding-left: 1.5vw;
-  margin-right: -2vw;
+  padding-right: 1vw;
+  padding-left: 1vw;
 }
 
 @media (max-width:930px) {
@@ -95,8 +94,8 @@
 }
 
 .videoList {
-  padding: 0px 0px 0px 50px;
-  grid-gap: 15px 20px;
+  margin: 0px 0px 0px 50px;
+  gap: 15px 20px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
