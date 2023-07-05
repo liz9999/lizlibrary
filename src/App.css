@@ -90,14 +90,33 @@
 }
 
 .video h1 {
-  padding-left: 5vw;
+  padding-left: 50px;
 }
 
 .videoList {
-  margin: 0px 0px 0px 5vw;
+  margin: 0px 0px 0px 50px;
   gap: 15px 20px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+@media (max-width:930px) {
+  .video h1 {
+    width: 320px;
+    align-self: center;
+    padding-left: 0;
+}
+
+.video {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.videoList {
+  margin: auto;
+  align-self: center;
+}
 }
 
 .videoItem .thumbnail {
