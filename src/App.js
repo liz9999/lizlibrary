@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useWindowDimensions } from 'react'
 import Navbar from './components/Navbar'
 import { VideoList } from "./helpers/VideoList"
 import VideoLibrary from "./components/VideoLibrary"
@@ -7,9 +7,10 @@ import Pagination from './components/Pagination'
 
 function App() {
   const [videoList, setVideoList] = useState(VideoList)
-
   const [currentPage, setCurrentPage] = useState(1);
-  const videosPerPage = 24;
+
+  const [width, setWidth] = useState(window.innerWidth);
+  const videosPerPage = Math.floor(width/340) * 5;
   const lastIndex = currentPage * videosPerPage;
   const firstIndex = lastIndex - videosPerPage;
   const currentVideos = videoList.slice(firstIndex, lastIndex);
@@ -21,6 +22,15 @@ function App() {
     plIndex: 5
   })
   const pagesSlice = pages.slice(pagesIndex.pfIndex, pagesIndex.plIndex);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+    }
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     if (currentPage > amountOfPages - 5) {

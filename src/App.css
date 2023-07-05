@@ -97,7 +97,7 @@
   margin: 0px 0px 0px 50px;
   gap: 15px 20px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 }
 
 .videoItem .thumbnail {
