@@ -30,6 +30,7 @@ function App() {
     const handleResize = () => {
       setWidth(window.innerWidth);
     }
+    setCurrentPage(1);
     firstRender.current = false;
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
