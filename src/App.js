@@ -34,7 +34,9 @@ function App() {
   }, []);
 
   useEffect(() => {
+    if (pageRef) {
     setCurrentPage(Math.ceil(pageRef.current/videosPerPage))
+    }
   }, [width])
 
   useEffect(() => {
