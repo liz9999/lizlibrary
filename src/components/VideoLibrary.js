@@ -10,7 +10,7 @@ const VideoLibrary = ({ListOfVideos, FullList, width}) => {
     return (
       <div className="video">
         <h1 className="videoTitle" style={myStyle}>{VideoList.length === FullList.length ? "Latest LIVEs" : FullList.length + " LIVEs"}</h1>
-        <div className="videoList">
+        <div className="videoList" style={myStyle}>
           {ListOfVideos.map((videoItem, key) => {
             return (
               <VideoItem

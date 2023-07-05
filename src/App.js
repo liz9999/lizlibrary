@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState, useEffect, useWindowDimensions } from 'react'
+import React, { useState, useEffect, useWindowDimensions, useRef } from 'react'
 import Navbar from './components/Navbar'
 import { VideoList } from "./helpers/VideoList"
 import VideoLibrary from "./components/VideoLibrary"
@@ -23,28 +23,35 @@ function App() {
     plIndex: 5
   })
   const pagesSlice = pages.slice(pagesIndex.pfIndex, pagesIndex.plIndex);
+  const pageRef = useRef(null);
 
   useEffect(() => {
     const handleResize = () => {
       setWidth(window.innerWidth);
     }
-
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   useEffect(() => {
+    setCurrentPage(Math.ceil(pageRef.current/videosPerPage))
+  }, [width])
+
+  useEffect(() => {
     if (currentPage > amountOfPages - 5) {
+      pageRef.current = lastIndex;
       setPagesIndex({
         pfIndex: currentPage - 5 + (amountOfPages - currentPage),
         plIndex: currentPage + (amountOfPages - currentPage)
       })
     } else if (currentPage < 4) {
+      pageRef.current = lastIndex;
       setPagesIndex({
         pfIndex: 0,
         plIndex: 5
       })
     } else if (currentPage >= 5) {
+      pageRef.current = lastIndex;
         setPagesIndex({
           pfIndex: currentPage - 3,
           plIndex: currentPage + 2
