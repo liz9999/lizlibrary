@@ -113,6 +113,11 @@ function App() {
       }
     })
     setVideoList(videos)
+    setCurrentPage(1)
+    setPagesIndex({
+      pfIndex: 0,
+      plIndex: 5
+    })
   }
 
   return (

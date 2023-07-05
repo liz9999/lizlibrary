@@ -90,11 +90,11 @@
 }
 
 .video h1 {
-  padding-left: 50px;
+  padding-left: 10vw;
 }
 
 .videoList {
-  margin: 0px 0px 0px 50px;
+  margin: 0px 0px 0px 10vw;
   gap: 15px 20px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
