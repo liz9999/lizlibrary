@@ -24,23 +24,18 @@ function App() {
   })
   const pagesSlice = pages.slice(pagesIndex.pfIndex, pagesIndex.plIndex);
   const pageRef = useRef(null);
-  const firstRender = useRef(true);
 
   useEffect(() => {
     const handleResize = () => {
       setWidth(window.innerWidth);
     }
-    setCurrentPage(1);
-    firstRender.current = false;
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  useEffect(() => {
-    if (!firstRender.current) {
-    setCurrentPage(Math.floor(pageRef.current/videosPerPage))
-    }
-  }, [width])
+  // useEffect(() => {
+  //   setCurrentPage(Math.floor(pageRef.current/videosPerPage))
+  // }, [width])
 
   useEffect(() => {
     if (currentPage > amountOfPages - 5) {
