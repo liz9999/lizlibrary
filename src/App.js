@@ -10,7 +10,8 @@ function App() {
   const [currentPage, setCurrentPage] = useState(1);
 
   const [width, setWidth] = useState(window.innerWidth);
-  const videosPerPage = Math.floor(width/340) * 5;
+  const videosPerRow = Math.floor(width/340);
+  const videosPerPage = videosPerRow * 5;
   const lastIndex = currentPage * videosPerPage;
   const firstIndex = lastIndex - videosPerPage;
   const currentVideos = videoList.slice(firstIndex, lastIndex);
@@ -123,7 +124,7 @@ function App() {
   return (
     <div className="App">
         <Navbar showAll={showAll} search={search} showGroup={showGroup} />
-        <VideoLibrary ListOfVideos={currentVideos} FullList={videoList} />
+        <VideoLibrary width={width} ListOfVideos={currentVideos} FullList={videoList} />
         <Pagination pages={pagesSlice} amountOfPages={amountOfPages} currentPage={currentPage}
         firstPage={firstPage} prevPage={prevPage} changePage={changePage} nextPage={nextPage} lastPage={lastPage}/>
     </div>
