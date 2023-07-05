@@ -24,18 +24,20 @@ function App() {
   })
   const pagesSlice = pages.slice(pagesIndex.pfIndex, pagesIndex.plIndex);
   const pageRef = useRef(null);
+  const firstRender = useRef(true);
 
   useEffect(() => {
     const handleResize = () => {
       setWidth(window.innerWidth);
     }
+    firstRender.current = false;
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   useEffect(() => {
-    if (pageRef) {
-    setCurrentPage(Math.ceil(pageRef.current/videosPerPage))
+    if (!firstRender) {
+    setCurrentPage(Math.floor(pageRef.current/videosPerPage))
     }
   }, [width])
 
